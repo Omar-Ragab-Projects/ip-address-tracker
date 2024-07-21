@@ -1,0 +1,159 @@
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --main-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.ip-app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.ip-app .top-pattern {
+  background-image: url(./../images/pattern-bg-desktop.png);
+  background-size: cover;
+  width: 100%;
+  height: 280px;
+}
+@media (max-width: 991px) {
+  .ip-app .top-pattern {
+    background-image: url(./../images/pattern-bg-mobile.png);
+    height: 240px;
+  }
+}
+
+.ip-app .map {
+  width: 100%;
+  height: calc(100% - 280px);
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .ip-app .map {
+    height: calc(100% - 240px);
+  }
+}
+
+.ip-app .tracker {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  width: 75%;
+}
+.ip-app .tracker h2 {
+  color: white;
+}
+.ip-app .tracker .form {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+@media (max-width: 991px) {
+  .ip-app .tracker .form {
+    width: 100%;
+  }
+}
+.ip-app .tracker .form input[type=text] {
+  border-radius: var(--main-radius);
+  padding: 15px 20px;
+  width: 100%;
+  border: none;
+  caret-color: var(--very-dark-gray);
+}
+.ip-app .tracker .form input[type=text]:focus {
+  outline: none;
+}
+@media (max-width: 991px) {
+  .ip-app .tracker .form input[type=text]::-moz-placeholder {
+    font-size: 12px;
+  }
+  .ip-app .tracker .form input[type=text]::placeholder {
+    font-size: 12px;
+  }
+}
+.ip-app .tracker .form .submit-btn {
+  position: absolute;
+  width: 50px;
+  top: 0;
+  right: 0px;
+  height: 100%;
+  background-color: black;
+  border-radius: 0 var(--main-radius) var(--main-radius) 0;
+  border: none;
+  cursor: pointer;
+}
+.ip-app .tracker .form .submit-btn i {
+  color: white;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ip-app .tracker .rezult-component {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 40px 20px;
+  border-radius: var(--main-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.168);
+}
+@media (max-width: 991px) {
+  .ip-app .tracker .rezult-component {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+}
+.ip-app .tracker .rezult-component > div {
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+.ip-app .tracker .rezult-component > div:not(:last-of-type) {
+  border-right: 1px solid var(--dark-gray);
+}
+@media (max-width: 991px) {
+  .ip-app .tracker .rezult-component > div {
+    padding: 0;
+    text-align: center;
+    border-right: none !important;
+  }
+}
+.ip-app .tracker .rezult-component > div h3 {
+  color: var(--dark-gray);
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+@media (max-width: 991px) {
+  .ip-app .tracker .rezult-component > div h3 {
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+}
+.ip-app .tracker .rezult-component > div span {
+  font-size: 25px;
+  font-weight: 600;
+}
+@media (max-width: 991px) {
+  .ip-app .tracker .rezult-component > div span {
+    font-size: 20px;
+  }
+}
